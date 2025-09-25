@@ -171,21 +171,6 @@
       window.scrollTo({top:0,behavior:'smooth'});
     }
 
-    function downloadCSV(details) {
-      let csvContent = 'Question,Selected,Correct,IsCorrect\n';
-      details.forEach(d => {
-        csvContent += `${d.q},${d.selected || ''},${d.correct},${d.isCorrect}\n`;
-      });
-      const blob = new Blob([csvContent], {type: 'text/csv'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'phishing_quiz_results.csv';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    }
-
     document.getElementById('submitBtn').addEventListener('click', () => {
       const form = document.getElementById('quizForm');
       let score = 0; let total = 10; let details = [];
@@ -221,7 +206,7 @@
       else advice = 'We recommend a short refresher training. Please review the explanations and report any incidents.';
       results.innerHTML += `<div style="margin-top:10px">${advice}</div>`;
 
-      downloadCSV(details);
+      
       results.scrollIntoView({behavior:'smooth'});
     });
 
@@ -232,6 +217,7 @@
       alert('Top tips:\n- Never provide credentials in response to email.\n- Hover before you click.\n- When in doubt, contact IT directly.');
     });
   </script>
+
 
 
 </body></html>
