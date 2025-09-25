@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>SIMULATED PHISHING TEST — Security Update Quiz</title>
+  <style>
+    :root{--bg:#f6f7fb;--card:#ffffff;--accent:#e11d48;--muted:#6b7280;--good:#10b981;--bad:#ef4444}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; background:var(--bg); margin:0; color:#111}
+    .banner{background:#111827;color:white;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+    .banner .pill{background:var(--accent);padding:6px 10px;border-radius:999px;font-weight:600}
+    .container{max-width:900px;margin:28px auto;padding:20px}
+    .card{background:var(--card);border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.08);padding:20px}
+    h1{margin:0 0 6px;font-size:20px}
+    p.lead{margin:0 0 18px;color:var(--muted)}
+    .question{padding:12px;border-radius:8px;border:1px solid #eef2f7;margin-bottom:12px}
+    .q-title{font-weight:600;margin-bottom:8px}
+    label.option{display:block;padding:8px;border-radius:6px;border:1px solid transparent;margin-bottom:6px;cursor:pointer}
+    input[type=radio]{margin-right:10px}
+    label.option:hover{background:#fbfbfd}
+    .actions{display:flex;gap:10px;align-items:center;margin-top:14px}
+    button{padding:10px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:#111827;color:white}
+    .btn-link{background:transparent;color:var(--accent);border:1px solid #fdecea}
+    .results{margin-top:16px;padding:12px;border-radius:8px}
+    .correct{color:var(--good);font-weight:700}
+    .incorrect{color:var(--bad);font-weight:700}
+    .explain{color:var(--muted);margin-top:6px}
+    .report{margin-top:18px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    @media (max-width:640px){.container{margin:12px}} 
+  </style>
+</head>
+<body>
+  <header class="banner">
+    <div style="display:flex;gap:14px;align-items:center">
+      <div style="font-weight:700">SIMULATED PHISHING TEST</div>
+      <div class="pill">TRAINING</div>
+    </div>
+    <div style="font-size:13px;color:#d1d5db">Topic: <strong>Security Update Available — Please Install</strong></div>
+  </header>
+
+  <main class="container">
+    <section class="card" aria-labelledby="quiz-title">
+      <h1 id="quiz-title">Security Awareness Quiz — 10 Questions</h1>
+      <p class="lead">This short quiz helps you recognise common phishing signs. This is a simulation. Select the best answer for each question and press <strong>Submit Answers</strong>. You will get immediate feedback and explanations.</p>
+
+      <form id="quizForm" action="">
+        <div class="question" data-q="1">
+          <div class="q-title">1. What is a key sign that this email is a phishing attempt?</div>
+          <label class="option"><input type="radio" name="q1" value="a"/> It comes from an internal domain</label>
+          <label class="option"><input type="radio" name="q1" value="b"/> The sender domain does not match the company&#39;s official domain</label>
+          <label class="option"><input type="radio" name="q1" value="c"/> The email contains a friendly greeting</label>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question" data-q="2">
+          <div class="q-title">2. How can you check if a link is malicious?</div>
+          <label class="option"><input type="radio" name="q2" value="a"/> Click it and see where it goes</label>
+          <label class="option"><input type="radio" name="q2" value="b"/> Hover over it to check the true URL</label>
+          <label class="option"><input type="radio" name="q2" value="c"/> Assume it is safe if it looks professional</label>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question" data-q="3">
+          <div class="q-title">3. What should you do with unexpected executable attachments?</div>
+          <label class="option"><input type="radio" name="q3" value="a"/> Open it immediately</label>
+          <label class="option"><input type="radio" name="q3" value="b"/> Report to IT and do not open</label>
+          <label class="option"><input type="radio" name="q3" value="c"/> Forward to colleagues</label>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question" data-q="4">
+          <div class="q-title">4. What does a generic greeting indicate?</div>
+          <label class="option"><input type="radio" name="q4" value="a"/> It is a friendly internal email</label>
+          <label class="option"><input type="radio" name="q4" value="b"/> The sender is using a personal tone</label>
+          <label class="option"><input type="radio" name="q4" value="c"/> It is likely a mass phishing email</label>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question" data-q="5">
+          <div class="q-title">5. Legitimate updates will never:</div>
+          <label class="option"><input type="radio" name="q5" value="a"/> Ask you to check your inbox</label>
+          <label class="option"><input type="radio" name="q5" value="b"/> Ask for your login credentials via email</label>
+          <label class="option"><input type="radio" name="q5" value="c"/> Notify you about security updates</label>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question" data-q="6">
+          <div class="q-title">6. What is risky about attachments named like executables?</div>
+          <label class="option"><input type="radio" name="q6" value="a"/> They are always safe</label>
+          <label class="option"><input type="radio" name="q6" value="b"/> They contain harmless documents</label>
+          <label class="option"><input type="radio" name="q6" value="c"/> They can contain malware</label>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question" data-q="7">
+          <div class="q-title">7. If unsure about an email, you should:</div>
+          <label class="option"><input type="radio" name="q7" value="a"/> Reply to the sender to ask for confirmation</label>
+          <label class="option"><input type="radio" name="q7" value="b"/> Contact IT through official channels</label>
+          <label class="option"><input type="radio" name="q7" value="c"/> Forward to friends for advice</label>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question" data-q="8">
+          <div class="q-title">8. How can you verify the true sender?</div>
+          <label class="option"><input type="radio" name="q8" value="a"/> Check full email headers</label>
+          <label class="option"><input type="radio" name="q8" value="b"/> Trust the display name</label>
+          <label class="option"><input type="radio" name="q8" value="c"/> Look only at the subject line</label>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question" data-q="9">
+          <div class="q-title">9. If you entered credentials into a phishing email, you should:</div>
+          <label class="option"><input type="radio" name="q9" value="a"/> Change your credentials and notify IT/security</label>
+          <label class="option"><input type="radio" name="q9" value="b"/> Ignore it</label>
+          <label class="option"><input type="radio" name="q9" value="c"/> Close your email client only</label>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="question" data-q="10">
+          <div class="q-title">10. What is the best defence against phishing?</div>
+          <label class="option"><input type="radio" name="q10" value="a"/> Only use email occasionally</label>
+          <label class="option"><input type="radio" name="q10" value="b"/> Combine vigilance, MFA, and reporting</label>
+          <label class="option"><input type="radio" name="q10" value="c"/> Disable your email account</label>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn-primary" id="submitBtn">Submit Answers</button>
+          <button type="button" class="btn-link" id="restartBtn">Restart Quiz</button>
+          <div style="margin-left:auto;color:var(--muted);font-size:13px">Estimated time: ~3 minutes</div>
+        </div>
+      </form>
+
+      <div id="results" class="results" aria-live="polite" style="display:none"></div>
+
+      <div class="report card" style="margin-top:12px">
+        <p style="margin:0">If you clicked a suspicious link or are unsure, report it to your security team immediately.</p>
+        <div style="margin-top:8px">
+          <a href="#" id="learnMore" style="margin-left:10px;color:var(--muted);font-size:13px">Learn how to spot phishing</a>
+        </div>
+      </div>
+
+      <footer>
+        <p style="margin:8px 0 0">This quiz is a <strong>simulation</strong> for security awareness. It does not install software. If you need help, contact IT.</p>
+      </footer>
+
+    </section>
+  </main>
+
+  <script>
+    const answers = {q1:'b', q2:'b', q3:'b', q4:'c', q5:'b', q6:'c', q7:'b', q8:'a', q9:'a', q10:'b'};
+    const explanations = {
+      q1:'Sender domain mismatch is a strong indicator the message is not from your company or a trusted vendor.',
+      q2:'Hidden/redirecting URLs are a common trick to send victims to malicious sites while appearing legitimate.',
+      q3:'Never run executables from email without verifying with IT — they can contain malware.',
+      q4:'Generic greetings are commonly used in mass phishing attempts because attackers don\'t have personal details.',
+      q5:'Legitimate updates will not ask for your login over email. Report and verify with IT.',
+      q6:'Attachments named like executables are high risk. Report them to security and do not open.',
+      q7:'Contact IT using known internal channels (phone, intranet, official chat), not reply-to addresses in the message.',
+      q8:'Checking full headers or the true sender helps reveal spoofing or forwarding services.',
+      q9:'Change credentials immediately and notify security so they can investigate and contain any breach.',
+      q10:'Combining MFA, vigilance and reporting gives the best defence against phishing.'
+    };
+
+    const IT_MAIL = 'it.nl@snoeks.com';
+
+    function clearQuiz() {
+      document.getElementById('quizForm').reset();
+      document.getElementById('results').style.display='none';
+      document.querySelectorAll('.feedback').forEach(f=>f.innerHTML='');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    function downloadCSV(details) {
+      let csvContent = 'Question,Selected,Correct,IsCorrect\n';
+      details.forEach(d => {
+        csvContent += `${d.q},${d.selected || ''},${d.correct},${d.isCorrect}\n`;
+      });
+      const blob = new Blob([csvContent], {type: 'text/csv'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'phishing_quiz_results.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const form = document.getElementById('quizForm');
+      let score = 0; let total = 10; let details = [];
+      for(let i=1;i<=10;i++){
+        const name = 'q'+i;
+        const radios = form.elements[name];
+        let selected = null;
+        if(radios){ for(const r of radios){ if(r.checked) selected = r.value; } }
+        const correct = answers[name];
+        const isCorrect = selected === correct;
+        if(isCorrect) score++;
+        details.push({q:i,selected,correct,isCorrect});
+      }
+
+      const results = document.getElementById('results');
+      results.style.display='block';
+      results.innerHTML = `<div><strong>Your score: ${score} / ${total}</strong></div>`;
+
+      details.forEach(d => {
+        const qDiv = document.querySelector('.question[data-q="'+d.q+'"] .feedback');
+        if(!qDiv) return;
+        let html = '';
+        if(d.selected===null){ html += `<div class="incorrect">No answer selected. Correct: <strong>${d.correct.toUpperCase()}</strong></div>` }
+        else if(d.isCorrect){ html += `<div class="correct">Correct</div>` }
+        else { html += `<div class="incorrect">Incorrect — correct: <strong>${d.correct.toUpperCase()}</strong></div>` }
+        html += `<div class="explain">${explanations['q'+d.q]}</div>`;
+        qDiv.innerHTML = html;
+      });
+
+      let advice = '';
+      if(score === total) advice = 'Excellent — you demonstrated strong phishing awareness.';
+      else if(score >= 7) advice = 'Good — a few improvements possible. Review the explanations above.';
+      else advice = 'We recommend a short refresher training. Please review the explanations and report any incidents.';
+      results.innerHTML += `<div style="margin-top:10px">${advice}</div>`;
+
+      downloadCSV(details);
+      results.scrollIntoView({behavior:'smooth'});
+    });
+
+    document.getElementById('restartBtn').addEventListener('click', clearQuiz);
+
+    document.getElementById('learnMore').addEventListener('click', (e)=>{
+      e.preventDefault();
+      alert('Top tips:\n- Never provide credentials in response to email.\n- Hover before you click.\n- When in doubt, contact IT directly.');
+    });
+  </script>
+
+
+</body></html>
